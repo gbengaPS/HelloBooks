@@ -10,5 +10,10 @@ router(api)
 @app.route('/')
 def index():
     return jsonify({'message': 'Welcome to hellobooks'})
+
+
+@app.route('/api/user')
+def user():
+    return 'this returns all the users'
 if __name__ == '__main__':
     app.run()
