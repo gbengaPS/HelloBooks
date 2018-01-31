@@ -6,3 +6,4 @@ flask-migrate
 flask-script
 flask-bcrypt
 flask-jwt-extended
+gunicorn
