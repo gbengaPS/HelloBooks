@@ -1,4 +1,4 @@
-from server.app import DB
+from server.app import DB, bcrypt
 from server.models.base_model import BaseModel
 
 
@@ -19,8 +19,9 @@ class User(DB.Model, BaseModel):
         self.full_name = full_name
         self.username = username
         self.email = email
-        self.password = password
-
-
+        self.password = bcrypt.generate_password_hash(password).decode('utf-8')
+    def check_username_email(self, username, email):
+        user = User.query.filter((User.username==username) | (User.email==email)).first()
+        return user
 
 
