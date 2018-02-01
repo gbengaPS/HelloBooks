@@ -22,3 +22,5 @@ def create_app(config_name):
     JWTManager(app)
 
     return app
+config_name = os.getenv('APP_SETTINGS')
+app = create_app(config_name)

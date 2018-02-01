@@ -33,4 +33,6 @@ class UserSignup(Resource):
                 return {'message': 'Username already in use'}, 409
             else:
                 return {'message': 'Email already in use'}, 409
+    def get(self):
+        return 'this returns all users'
 
