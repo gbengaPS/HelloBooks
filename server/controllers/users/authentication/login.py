@@ -4,6 +4,7 @@ from flask_jwt_extended import create_access_token
 from server.app import bcrypt
 from server.models.users import User
 
+
 class UserLogin(Resource):
     def post(self):
         parser = reqparse.RequestParser()
@@ -13,8 +14,8 @@ class UserLogin(Resource):
         password = request.form['password']
         username = request.form['username']
         user = User.query.filter((User.username == username) | (User.email == username)).first()
-        if user == None:
-            return {'message':'username or password incorrect'}, 401
+        if not user:
+            return {'message': 'username or password incorrect'}, 401
         else:
             if bcrypt.check_password_hash(user.password, password):
                 user_details = {

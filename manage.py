@@ -1,5 +1,5 @@
 import os
-from flask_script import Manager # class for handling a set of commands
+from flask_script import Manager  # class for handling a set of commands
 from flask_migrate import Migrate, MigrateCommand
 from server.app import DB, create_app
 from server.models import users

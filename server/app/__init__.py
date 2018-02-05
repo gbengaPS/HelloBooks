@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 # local import
-from instance.config import app_config
+from server.instance.config import app_config
 
 # initialize sql-alchemy
 DB = SQLAlchemy()
